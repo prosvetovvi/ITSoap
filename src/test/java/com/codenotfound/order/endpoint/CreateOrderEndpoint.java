@@ -1,4 +1,4 @@
-package com.codenotfound.order;
+package com.codenotfound.order.endpoint;
 
 import java.util.UUID;
 
@@ -33,7 +33,7 @@ public class CreateOrderEndpoint {
 
         ObjectFactory factory = new ObjectFactory();
         OrderConfirmation response = factory.createOrderConfirmation();
-        response.setConfirmationId(UUID.randomUUID().toString());
+        response.setConfirmationId(request.getCustomer().getFirstName()+" " + request.getCustomer().getLastName());
 
         LOGGER.info("Endpoint sending orderConfirmationId='{}'",
                 response.getConfirmationId());

@@ -1,4 +1,4 @@
-package com.codenotfound.order;
+package com.codenotfound.order.endpoint;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -19,6 +19,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     public ServletRegistrationBean messageDispatcherServlet(
             ApplicationContext applicationContext) {
 
+        System.out.println(">>>servlet");
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
 

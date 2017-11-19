@@ -9,8 +9,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.codenotfound.types.order.CustomerType;
@@ -20,7 +23,8 @@ import com.codenotfound.types.order.ObjectFactory;
 import com.codenotfound.types.order.ProductType;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+@EnableAutoConfiguration
 public class CreateOrderClientIT {
 
     @Autowired
@@ -51,6 +55,6 @@ public class CreateOrderClientIT {
     @Test
     public void testCreateOrder() {
         assertThat(createOrderClient.createOrder(customer, lineItems)
-                .getConfirmationId()).isEqualTo("gero et");
+                .getConfirmationId()).isEqualTo("John Doe");
     }
 }
