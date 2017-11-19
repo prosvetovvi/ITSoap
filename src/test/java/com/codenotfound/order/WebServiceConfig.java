@@ -1,4 +1,4 @@
-package com.codenotfound.order.endpoint;
+package com.codenotfound.order;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;

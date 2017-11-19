@@ -1,4 +1,4 @@
-package com.codenotfound.order.endpoint;
+package com.codenotfound.order;
 
 import java.util.UUID;
 

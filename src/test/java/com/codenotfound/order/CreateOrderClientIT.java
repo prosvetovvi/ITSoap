@@ -1,9 +1,10 @@
-package com.codenotfound.order.client;
+package com.codenotfound.order;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.math.BigInteger;
 
+import com.codenotfound.order.client.CreateOrderClient;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
